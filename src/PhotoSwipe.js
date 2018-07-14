@@ -9,7 +9,7 @@ class PhotoSwipe extends React.Component {
   static propTypes = {
     isOpen: PropTypes.bool.isRequired,
     items: PropTypes.array.isRequired,
-    options: PropTypes.object,
+    options: PropTypes.object,  // eslint-disable-line
     onClose: PropTypes.func,
     id: PropTypes.string,
     className: PropTypes.string
@@ -54,7 +54,7 @@ class PhotoSwipe extends React.Component {
   openPhotoSwipe = (props) => {
     const { items, options } = props;
     const pswpElement = this.pswpElement;
-    this.photoSwipe = new Photoswipe(pswpElement, PhotoswipeUIDefault, items, options);
+    this.photoSwipe = new Photoswipe(pswpElement, PhotoswipeUIDefault, [...items], options);
     events.forEach((event) => {
       const callback = props[event];
       if (callback || event === 'destroy') {
