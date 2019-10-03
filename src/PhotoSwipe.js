@@ -44,7 +44,7 @@ class PhotoSwipe extends React.Component {
       } else {
         this.updateItems(props.items);
       }
-    } else if (isOpen) {
+    } else if (prevProps.isOpen && !props.isOpen) {
       this.closePhotoSwipe();
     }
   };
